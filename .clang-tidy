@@ -1,0 +1,126 @@
+Checks:          'abseil-*,
+                  bugprone-*,
+                  -bugprone-lambda-function-name,
+                  -bugprone-macro-parentheses,
+                  -bugprone-easily-swappable-parameters,
+                  clang-analyzer-*,
+                  -clang-diagnostic-pragma-once-outside-header,
+                  -clang-diagnostic-builtin-macro-redefined,
+                  -clang-diagnostic-unused-const-variable,
+                  misc-unused-using-decls,
+                  modernize-*,
+                  -modernize-use-trailing-return-type,
+                  -modernize-use-nullptr,
+                  performance-*,
+                  readability-identifier-naming,
+                  readability-braces-around-statements,
+                  readability-container-size-empty,
+                  readability-redundant-*,
+                  cppcoreguidelines-*,
+                  -cppcoreguidelines-avoid-do-while,
+                  -cppcoreguidelines-avoid-const-or-ref-data-members,
+                  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+                  -cppcoreguidelines-pro-bounds-constant-array-index,
+                  -cppcoreguidelines-avoid-non-const-global-variables,
+                  -cppcoreguidelines-non-private-member-variables-in-classes,
+                  -cppcoreguidelines-pro-type-union-access'
+
+WarningsAsErrors: 'abseil-duration-*,
+                   abseil-faster-strsplit-delimiter,
+                   abseil-no-namespace,
+                   abseil-redundant-strcat-calls,
+                   abseil-str-cat-append,
+                   abseil-string-find-startswith,
+                   abseil-upgrade-duration-conversions,
+                   bugprone-assert-side-effect,
+                   bugprone-unused-raii,
+                   bugprone-use-after-move,
+                   bugprone-exception-escape,
+                   clang-analyzer-core.DivideZero,
+                   misc-unused-using-decls,
+                   modernize-deprecated-headers,
+                   modernize-loop-convert,
+                   modernize-make-shared,
+                   modernize-make-unique,
+                   modernize-return-braced-init-list,
+                   modernize-use-default-member-init,
+                   modernize-use-equals-default,
+                   modernize-use-override,
+                   modernize-use-using,
+                   performance-faster-string-find,
+                   performance-for-range-copy,
+                   performance-inefficient-algorithm,
+                   performance-inefficient-vector-operation,
+                   performance-noexcept-move-constructor,
+                   performance-move-constructor-init,
+                   performance-type-promotion-in-math-fn,
+                   performance-unnecessary-copy-initialization,
+                   readability-braces-around-statements,
+                   readability-container-size-empty,
+                   readability-identifier-naming,
+                   readability-redundant-control-flow,
+                   readability-redundant-member-init,
+                   readability-redundant-smartptr-get,
+                   readability-redundant-string-cstr'
+
+CheckOptions:
+  - key:             bugprone-assert-side-effect.AssertMacros
+    value:           'ASSERT'
+
+  - key:             bugprone-dangling-handle.HandleClasses
+    value:           'std::basic_string_view;std::experimental::basic_string_view;absl::string_view'
+
+  - key:             modernize-use-auto.MinTypeNameLength
+    value:           '10'
+
+  - key:             performance-move-const-arg.CheckTriviallyCopyableMove
+    value:           '0'
+
+  - { key: readability-identifier-naming.AbstractClassCase, value: CamelCase }
+  - { key: readability-identifier-naming.ClassCase, value: CamelCase }
+  - { key: readability-identifier-naming.ClassConstantCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.ClassMemberCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.ClassMethodCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstantCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstantMemberCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstantParameterCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstantPointerParameterCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstexprFunctionCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstexprMethodCase, value: camelBack }
+  - { key: readability-identifier-naming.ConstexprVariableCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.EnumCase, value: CamelCase }
+  - { key: readability-identifier-naming.EnumConstantCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.FunctionCase, value: camelBack }
+  - { key: readability-identifier-naming.GlobalConstantCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.GlobalConstantPointerCase, value: CamelCase }
+  - { key: readability-identifier-naming.GlobalFunctionCase, value: camelBack }
+  - { key: readability-identifier-naming.GlobalPointerCase, value: CamelCase }
+  - { key: readability-identifier-naming.GlobalVariableCase, value: CamelCase }
+  - { key: readability-identifier-naming.IgnoreMainLikeFunctions, value: 0 }
+  - { key: readability-identifier-naming.InlineNamespaceCase, value: lower_case }
+  - { key: readability-identifier-naming.LocalConstantCase, value: camelBack }
+  - { key: readability-identifier-naming.LocalConstantPointerCase, value: camelBack }
+  - { key: readability-identifier-naming.LocalPointerCase, value: camelBack }
+  - { key: readability-identifier-naming.LocalVariableCase, value: camelBack }
+  - { key: readability-identifier-naming.MemberCase, value: camelBack }
+  - { key: readability-identifier-naming.MethodCase, value: camelBack }
+  - { key: readability-identifier-naming.NamespaceCase, value: lower_case }
+  - { key: readability-identifier-naming.ParameterCase, value: camelBack }
+  - { key: readability-identifier-naming.ParameterPackCase, value: camelBack }
+  - { key: readability-identifier-naming.PointerParameterCase, value: camelBack }
+  - { key: readability-identifier-naming.PrivateMemberCase, value: camelBack }
+  - { key: readability-identifier-naming.PrivateMethodCase, value: camelBack }
+  - { key: readability-identifier-naming.ProtectedMemberCase, value: camelBack }
+  - { key: readability-identifier-naming.ProtectedMethodCase, value: camelBack }
+  - { key: readability-identifier-naming.PublicMemberCase, value: camelBack }
+  - { key: readability-identifier-naming.PublicMethodCase, value: camelBack }
+  - { key: readability-identifier-naming.StaticConstantCase, value: UPPER_CASE }
+  - { key: readability-identifier-naming.StaticVariableCase, value: CamelCase }
+  - { key: readability-identifier-naming.StructCase, value: CamelCase }
+  - { key: readability-identifier-naming.TypeAliasCase, value: CamelCase }
+  - { key: readability-identifier-naming.TypedefCase, value: CamelCase }
+  - { key: readability-identifier-naming.UnionCase, value: CamelCase }
+  - { key: readability-identifier-naming.VariableCase, value: camelBack }
+  - { key: readability-identifier-naming.VirtualMethodCase, value: camelBack }
+
+HeaderFilterRegex: ''
